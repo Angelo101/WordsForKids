@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SpellingForKids</string>
+    <string name="title_activity_level_one_missing_letters3">LevelOneMissingLetters3</string>
+    <string name="title_activity_level_one_missing_letters5">LevelOneMissingLetters5</string>
+</resources>
