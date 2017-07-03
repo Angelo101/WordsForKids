@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MissingLettersMenu extends ActionBar {
     private Context context;
-    private Button level1, level2, level3;
+    private Button level1, level2, level3, level4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,14 @@ public class MissingLettersMenu extends ActionBar {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, LevelThreeMissingLetters.class);
+                startActivity(intent);
+            }
+        });
+        level4 = (Button)findViewById(R.id.buttonLevel4);
+        level4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Level4MissingLetters.class);
                 startActivity(intent);
             }
         });

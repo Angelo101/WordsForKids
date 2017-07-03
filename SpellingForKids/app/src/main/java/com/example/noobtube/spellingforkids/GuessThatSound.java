@@ -35,7 +35,7 @@ public class GuessThatSound extends ActionBar {
     public String keys4;
     public static int count2 = 0;
     public int isTrue = 0;
-    private SoundPoolUtil sp;
+    private static SoundPoolUtil sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class GuessThatSound extends ActionBar {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText1.getText().toString().equals(keys)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText2.requestFocus();
                     isTrue++;
@@ -85,7 +85,7 @@ public class GuessThatSound extends ActionBar {
                     editText1.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText1.addTextChangedListener(this);
                     hideKeyBoard();
                 }
@@ -109,7 +109,7 @@ public class GuessThatSound extends ActionBar {
             public void afterTextChanged(Editable s) {
                 if(editText2.getText().toString().equals(keys2)) {
                     correct++;
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     editTextThree.requestFocus();
                     isTrue++;
                     editText2.setEnabled(false);
@@ -123,7 +123,7 @@ public class GuessThatSound extends ActionBar {
                     editText2.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText2.setImeOptions(isTrue);
                     editText2.addTextChangedListener(this);
                     hideKeyBoard();
@@ -145,7 +145,7 @@ public class GuessThatSound extends ActionBar {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editTextThree.getText().toString().equals(keys3)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                   playSoundCorrect();
                     correct++;
                     editTextFour.requestFocus();
                     isTrue++;
@@ -160,7 +160,7 @@ public class GuessThatSound extends ActionBar {
                     editTextThree.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editTextThree.setImeOptions(isTrue);
                     editTextThree.addTextChangedListener(this);
                     hideKeyBoard();
@@ -182,7 +182,7 @@ public class GuessThatSound extends ActionBar {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editTextFour.getText().toString().equals(keys4)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editTextThree.requestFocus();
                     isTrue++;
@@ -197,7 +197,7 @@ public class GuessThatSound extends ActionBar {
                     editTextFour.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editTextFour.setImeOptions(isTrue);
                     editTextFour.addTextChangedListener(this);
                     hideKeyBoard();
@@ -658,6 +658,12 @@ public class GuessThatSound extends ActionBar {
         keys2 = "i";
         keys3 = "f";
         keys4 = "t";
+    }
+    public static void playSoundIncorrect(){
+        sp.playSound(SoundPoolUtil.INCORRECT);
+    }
+    public static void playSoundCorrect(){
+        sp.playSound(SoundPoolUtil.CORRECT);
     }
 }
 
