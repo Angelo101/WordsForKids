@@ -234,7 +234,7 @@ public class GuessThatSound extends ActionBar {
                             startActivity(intent);
                             finish();
                             sp.pool.release();
-                            mp.release();
+//                            mp.release();
                         }
 
                     }

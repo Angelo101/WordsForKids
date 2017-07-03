@@ -42,6 +42,7 @@ public class LevelOneMissingLetters extends ActionBar {
         editText.setFocusableInTouchMode(true);
         sp = new SoundPoolUtil(this);
 //        setCat();
+
         startNewWord();
         hideKeyboard();
         editText.addTextChangedListener(new TextWatcher() {
@@ -103,7 +104,8 @@ public class LevelOneMissingLetters extends ActionBar {
                                         count++;
                                         Intent intent = new Intent(context, LevelOneMissingLetters.class);
                                         startActivity(intent);
-                                        finish();
+//                                        recreate();
+
                                         sp.pool.release();
                                     }
 

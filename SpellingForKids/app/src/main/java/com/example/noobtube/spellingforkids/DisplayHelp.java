@@ -32,7 +32,7 @@ public class DisplayHelp extends AppCompatActivity {
         ImageView image = (ImageView) dialog.findViewById(R.id.image);
         image.setImageResource(R.drawable.listen);
 
-        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+
         // if button is clicked, close the custom dialog
         image.setOnClickListener(new View.OnClickListener() {
             @Override

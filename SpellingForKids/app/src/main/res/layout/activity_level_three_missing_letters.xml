@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_level_one_missing_letters"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.noobtube.spellingforkids.LevelThreeMissingLetters">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/hare"
+        android:id="@+id/imageView2"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/editTextCat"
+        android:maxLength="1"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/wordViewCat2"
+        android:layout_alignBottom="@+id/wordViewCat2"
+        android:layout_toEndOf="@+id/wordViewCat2"
+        android:textColor="#0000FF" />
+    <EditText
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:id="@+id/editTextCat2"
+        android:maxLength="1"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="30sp"
+        android:layout_alignBaseline="@+id/wordViewCat2"
+        android:layout_alignBottom="@+id/wordViewCat2"
+        android:layout_toEndOf="@+id/editTextCat"
+        android:textColor="#0000FF" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wordViewCat2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageView2"
+        android:textColor="#0000FF" />
+
+
+</RelativeLayout>

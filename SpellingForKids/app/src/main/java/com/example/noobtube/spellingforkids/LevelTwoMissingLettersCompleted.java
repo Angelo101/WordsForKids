@@ -25,7 +25,7 @@ public class LevelTwoMissingLettersCompleted extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MainMenu.class);
+                Intent intent = new Intent(context, MissingLettersMenu.class);
                 startActivity(intent);
                 mp.stop();
                 LevelTwoMissingLetters.count2 = 0;

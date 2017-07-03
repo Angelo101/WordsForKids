@@ -7,9 +7,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainMenu extends AppCompatActivity {
     private Button buttonMissingLetters, buttonGuessThatSound;
@@ -18,8 +20,20 @@ public class MainMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.menu2);
         context = this;
+        Display display ;
+        int width =0;
+        display = getWindowManager().getDefaultDisplay();
+        width = display.getWidth();
+        if(width>=1200)
+        {
+            setContentView(R.layout.activity_main_menu);
+        }
+        else if(width<900)
+        {
+            setContentView(R.layout.activity_main_menu);
+        }
 
         buttonMissingLetters = (Button)findViewById(R.id.buttonPlayLetters);
         buttonMissingLetters.setOnClickListener(new View.OnClickListener() {
@@ -37,28 +51,5 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-    }
-    protected void createDialogNotify(){
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setMessage("In this game, click the pictures to listen to the word")
-                .setCancelable(false)
-                .setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(context, GuessThatSound.class);
-                        startActivity(intent);
-                        InputMethodManager imm = (InputMethodManager) getSystemService(
-                                Activity.INPUT_METHOD_SERVICE);
-                        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 1);
-                        dialog.dismiss();
-                    }
-                })
-                .create();
-        alert.show();
     }
 }

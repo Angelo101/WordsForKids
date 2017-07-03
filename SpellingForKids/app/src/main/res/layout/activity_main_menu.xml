@@ -15,18 +15,22 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/buttonPlayLetters"
         android:background="@drawable/buttonmissingletters"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/playGuessThatSound"
         android:layout_weight="1"
         android:background="@drawable/buttonguessthatsound"
         android:layout_below="@+id/buttonPlayLetters"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp" />
 </RelativeLayout>

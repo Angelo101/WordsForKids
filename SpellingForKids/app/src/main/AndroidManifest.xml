@@ -25,7 +25,9 @@
         <activity android:name=".LevelOneMissingLettersCompleted" />
         <activity android:name=".LevelTwoMissingLettersCompleted" />
         <activity android:name=".GuessThatSound" />
-        <activity android:name=".DisplayHelp"></activity>
+        <activity android:name=".DisplayHelp" />
+        <activity android:name=".LevelThreeMissingLetters" />
+        <activity android:name=".LevelThreeCompleted"></activity>
     </application>
 
 </manifest>
