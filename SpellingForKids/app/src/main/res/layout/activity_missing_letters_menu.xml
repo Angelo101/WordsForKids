@@ -50,4 +50,13 @@
         android:background="@drawable/buttonlevel4"
         android:layout_below="@+id/buttonLevel3"
         android:layout_alignParentStart="true" />
+    <Button
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonLevel5"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/buttonlevel5"
+        android:layout_below="@+id/buttonLevel4"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -28,7 +28,8 @@
         <activity android:name=".DisplayHelp" />
         <activity android:name=".LevelThreeMissingLetters" />
         <activity android:name=".LevelThreeCompleted" />
-        <activity android:name=".Level4MissingLetters"></activity>
+        <activity android:name=".Level4MissingLetters" />
+        <activity android:name=".Level5MissingLetters"></activity>
     </application>
 
 </manifest>
