@@ -29,7 +29,9 @@
         <activity android:name=".LevelThreeMissingLetters" />
         <activity android:name=".LevelThreeCompleted" />
         <activity android:name=".Level4MissingLetters" />
-        <activity android:name=".Level5MissingLetters"></activity>
+        <activity android:name=".Level5MissingLetters" />
+        <activity android:name=".Level6MissingLetters" />
+        <activity android:name=".Level7"></activity>
     </application>
 
 </manifest>

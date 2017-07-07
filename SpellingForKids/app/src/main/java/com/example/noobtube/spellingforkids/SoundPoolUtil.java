@@ -41,5 +41,4 @@ public class SoundPoolUtil {
         else if (soundId < 0 && soundId >= soundIds.length) return;
         pool.play(soundIds[soundId], 1, 1, 1, 0, 1);
     }
-
 }

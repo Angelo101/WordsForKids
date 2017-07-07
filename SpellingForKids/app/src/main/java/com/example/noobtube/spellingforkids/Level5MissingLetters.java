@@ -32,7 +32,7 @@ public class Level5MissingLetters extends AppCompatActivity {
 
     public static int count2 = 0;
     public int isTrue = 0;
-    private SoundPoolUtil sp;
+    private static SoundPoolUtil sp;
 
 
 
@@ -69,7 +69,7 @@ public class Level5MissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText2.getText().toString().equals(keys)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText3.requestFocus();
                     isTrue++;
@@ -83,7 +83,7 @@ public class Level5MissingLetters extends AppCompatActivity {
                     editText2.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText2.addTextChangedListener(this);
                     hideKeyBoard();
                 }
@@ -105,7 +105,7 @@ public class Level5MissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText3.getText().toString().equals(keys2)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText4.requestFocus();
                     isTrue++;
@@ -120,7 +120,7 @@ public class Level5MissingLetters extends AppCompatActivity {
                     editText3.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText3.setImeOptions(isTrue);
                     editText3.addTextChangedListener(this);
                     hideKeyBoard();
@@ -143,7 +143,7 @@ public class Level5MissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText4.getText().toString().equals(keys3)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText4.requestFocus();
                     isTrue++;
@@ -158,7 +158,7 @@ public class Level5MissingLetters extends AppCompatActivity {
                     editText4.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText4.setImeOptions(isTrue);
                     editText4.addTextChangedListener(this);
                     hideKeyBoard();
@@ -184,7 +184,7 @@ public class Level5MissingLetters extends AppCompatActivity {
                         if(count2 == 19){
                             mp = MediaPlayer.create(Level5MissingLetters.this, R.raw.firecrackers);
                             mp.start();
-                            Intent intent = new Intent(context, LevelThreeCompleted.class);// change!
+                            Intent intent = new Intent(context, LevelThreeCompleted.class);
                             startActivity(intent);
 
                         }
@@ -356,7 +356,7 @@ public class Level5MissingLetters extends AppCompatActivity {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.string);
         iv.setImageBitmap(bitmap);
         editText2.getText().clear();
-        textView2.setText("s  t");
+        textView2.setText("s  t  r");
         keys = "i";
         keys2 = "n";
         keys3 = "g";
@@ -459,6 +459,12 @@ public class Level5MissingLetters extends AppCompatActivity {
         keys = "o";
         keys2 = "r";
         keys3 = "m";
+    }
+    public static void playSoundIncorrect(){
+        sp.playSound(SoundPoolUtil.INCORRECT);
+    }
+    public static void playSoundCorrect(){
+        sp.playSound(SoundPoolUtil.CORRECT);
     }
 
 }

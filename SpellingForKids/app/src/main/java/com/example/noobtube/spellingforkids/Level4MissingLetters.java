@@ -31,7 +31,7 @@ public class Level4MissingLetters extends AppCompatActivity {
 
     public static int count2 = 0;
     public int isTrue = 0;
-    private SoundPoolUtil sp;
+    private static SoundPoolUtil sp;
 
 
 
@@ -66,7 +66,7 @@ public class Level4MissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText2.getText().toString().equals(keys)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText3.requestFocus();
                     isTrue++;
@@ -80,7 +80,7 @@ public class Level4MissingLetters extends AppCompatActivity {
                     editText2.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText2.addTextChangedListener(this);
                     hideKeyBoard();
                 }
@@ -102,7 +102,7 @@ public class Level4MissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText3.getText().toString().equals(keys2)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText2.requestFocus();
                     isTrue++;
@@ -117,7 +117,7 @@ public class Level4MissingLetters extends AppCompatActivity {
                     editText3.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText3.setImeOptions(isTrue);
                     editText3.addTextChangedListener(this);
                     hideKeyBoard();
@@ -142,7 +142,7 @@ public class Level4MissingLetters extends AppCompatActivity {
                         if(count2 == 19){
                             mp = MediaPlayer.create(Level4MissingLetters.this, R.raw.firecrackers);
                             mp.start();
-                            Intent intent = new Intent(context, LevelThreeCompleted.class);// change!
+                            Intent intent = new Intent(context, LevelThreeCompleted.class);
                             startActivity(intent);
 
                         }
@@ -397,6 +397,12 @@ public class Level4MissingLetters extends AppCompatActivity {
         textView2.setText("p  e  a");
         keys = "c";
         keys2 = "h";
+    }
+    public static void playSoundIncorrect(){
+        sp.playSound(SoundPoolUtil.INCORRECT);
+    }
+    public static void playSoundCorrect(){
+        sp.playSound(SoundPoolUtil.CORRECT);
     }
 
 }

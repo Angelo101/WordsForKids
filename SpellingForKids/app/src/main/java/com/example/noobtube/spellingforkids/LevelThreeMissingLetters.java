@@ -30,7 +30,7 @@ public class LevelThreeMissingLetters extends AppCompatActivity {
     public String keys2;
     public static int count2 = 0;
     public int isTrue = 0;
-    private SoundPoolUtil sp;
+    private static SoundPoolUtil sp;
 
 
 
@@ -65,7 +65,7 @@ public class LevelThreeMissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText2.getText().toString().equals(keys)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText3.requestFocus();
                     isTrue++;
@@ -79,7 +79,7 @@ public class LevelThreeMissingLetters extends AppCompatActivity {
                     editText2.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText2.addTextChangedListener(this);
                     hideKeyBoard();
                 }
@@ -101,7 +101,7 @@ public class LevelThreeMissingLetters extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText3.getText().toString().equals(keys2)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     correct++;
                     editText2.requestFocus();
                     isTrue++;
@@ -116,7 +116,7 @@ public class LevelThreeMissingLetters extends AppCompatActivity {
                     editText3.getText().clear();
                     createDialogIncorrect();
                     incorrect++;
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText3.setImeOptions(isTrue);
                     editText3.addTextChangedListener(this);
                     hideKeyBoard();
@@ -396,6 +396,12 @@ public class LevelThreeMissingLetters extends AppCompatActivity {
         textView2.setText("m  i");
         keys = "c";
         keys2 = "e";
+    }
+    public static void playSoundIncorrect(){
+        sp.playSound(SoundPoolUtil.INCORRECT);
+    }
+    public static void playSoundCorrect(){
+        sp.playSound(SoundPoolUtil.CORRECT);
     }
 
 }

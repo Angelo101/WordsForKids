@@ -28,7 +28,7 @@ public class LevelOneMissingLetters extends ActionBar {
     public TextView textView;
     public String keys;
     public static int count = 0;
-    private SoundPoolUtil sp;
+    private static SoundPoolUtil sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class LevelOneMissingLetters extends ActionBar {
             @Override
             public void afterTextChanged(Editable s) {
                 if(editText.getText().toString().equals(keys)) {
-                    sp.playSound(SoundPoolUtil.CORRECT);
+                    playSoundCorrect();
                     createDialogCorrect();
                     correct++;
                 }
@@ -70,7 +70,7 @@ public class LevelOneMissingLetters extends ActionBar {
                     createDialogIncorrect();
                     incorrect++;
                     hideKeyboard();
-                    sp.playSound(SoundPoolUtil.INCORRECT);
+                    playSoundIncorrect();
                     editText.addTextChangedListener(this);
                 }
 
@@ -80,6 +80,7 @@ public class LevelOneMissingLetters extends ActionBar {
 
 
     }
+
     protected void hideKeyboard(){
         InputMethodManager imm = (InputMethodManager) getSystemService(
                 Activity.INPUT_METHOD_SERVICE);
@@ -224,6 +225,14 @@ public class LevelOneMissingLetters extends ActionBar {
         textView.setText("a r");
         keys = "c";
     }
-}
+        public static void playSoundIncorrect(){
+            sp.playSound(SoundPoolUtil.INCORRECT);
+        }
+        public static void playSoundCorrect(){
+            sp.playSound(SoundPoolUtil.CORRECT);
+        }
+
+    }
+
 
 

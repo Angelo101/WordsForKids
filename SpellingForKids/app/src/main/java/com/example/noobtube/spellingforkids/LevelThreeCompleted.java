@@ -28,6 +28,8 @@ public class LevelThreeCompleted extends AppCompatActivity {
                 startActivity(intent);
                 mp.stop();
                 LevelThreeMissingLetters.count2 = 0;
+                Level4MissingLetters.count2 = 0;
+                Level5MissingLetters.count2 =0;
             }
         });
     }
